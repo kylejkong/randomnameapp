@@ -1,0 +1,160 @@
+{% load static %}
+<html lang="en">
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Random Name</title>
+    <style>
+        body {
+            background-color: rgb(249, 255, 195);
+        }
+        button {
+            margin-bottom: 15px;
+            border-radius: 15px;
+            background-color: rgb(164, 211, 252);
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            font-family:'Courier New', Courier, monospace
+        }
+
+    </style>
+    <script>
+        var csrf = $("input[name=csrfmiddlewaretoken]").val();
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $.ajax({
+                    url:'',
+                    type:'get',
+                    data:{
+                        btn1: $(this).text()
+                    },
+                    success: function(response){
+                        // $('#left').show()
+                        $('#left').append('<li>' + response.left);
+
+                        // $('#wrapper').not('#box_1').hide()
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn2").click(function(){
+                $.ajax({
+                    url:'',
+                    type:'get',
+                    data:{
+                        btn2: $(this).text(),
+                    
+                    },
+                    success: function(response){
+                        // $('#right').show()
+                        $('#right').append('<li>' + response.right);
+                        // $('#wrapper').not('#box_2').hide()
+
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                $.ajax({
+                    url:'',
+                    type:'get',
+                    data:{
+                        btn3: $(this).text(),
+                    
+                    },
+                    success: function(response){
+                        // $('#third').show()
+                        $('#third').append('<li>' + response.third);
+                        // $('#wrapper').not('#box_3').hide()
+
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn4").click(function(){
+                $.ajax({
+                    url:'',
+                    type:'get',
+                    data:{
+                        btn4: $(this).text(),
+                    
+                    },
+                    success: function(response){
+                        // $('#fourth').show()
+                        $('#fourth').append('<li>' + response.fourth);
+                        // $('#wrapper').not('#box_4').hide()
+
+                    }
+                });
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+<button id = 'btn1' type="button" class="btn btn-success btn-lg">EE Male Name</button>
+<button id = 'btn2' type="button" class="btn btn-success btn-lg">EE Female Name</button>
+<button id = 'btn3' type="button" class="btn btn-success btn-lg">J Male Name</button>
+<button id = 'btn4' type="button" class="btn btn-success btn-lg">J Female Name</button>
+<div id="wrapper">
+    
+    <div id="box_1">
+
+        
+
+        <ul id = 'left'>
+
+        </ul>
+
+    </div>
+
+    <div id="box_2">
+        
+
+        <ul id = 'right'>
+            <p>EE Female Name</p>
+
+        </ul>
+
+
+    </div>
+
+
+    <div id="box_3">
+        
+
+        <ul id = 'third'>
+
+        </ul>
+
+
+    </div>
+
+    <div id="box_4">
+       
+
+        <ul id = 'fourth'>
+
+        </ul>
+
+
+    </div>
+</div>
+
+</body>
